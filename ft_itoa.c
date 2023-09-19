@@ -72,7 +72,10 @@ char	*ft_itoa(int n)
 		negative = -1;
 	}
 	length = find_length(num);
-	digits = (char *)malloc(length + 2);
+	if(negative == 1)
+		digits = (char *)malloc(length + 1);
+	else
+		digits = (char *)malloc(length + 2);
 	if (digits == NULL)
 		return (NULL);
 	set_arr(digits, num, negative, length);
