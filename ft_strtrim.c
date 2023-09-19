@@ -12,54 +12,57 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 
-static int	is_in_set(char c, const char *set)
+static int get_start(char *s1, char *set, size_t len)
 {
-	while (*set)
-		if (c == *set++)
-			return (1);
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		if (ft_strchr(set, s1[i]) == 0)
+			break;
+		i++;
+	}
+	return (i);
+}
+
+static int get_end(char *s1, char *set, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	len = len - 1;
+	while (len >= 0)
+	{
+		if (ft_strchr(set, s1[len]) == 0)
+			break;
+		len--;
+	}
+	return (len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
-	int		s1_index;
 	char	*trimmed;
-
-	i = 0;
-	j = 0;
-	if (!set)
-		return ((char *)s1);
-	s1_index = ft_strlen((char *)s1) - 1;
-	trimmed = (char *) malloc (s1_index + 2);
-	if (trimmed == NULL)
-		return (NULL);
-	while (is_in_set(s1[i], set) == 1)
-		i++;
-	if (i == s1_index)
-		return (NULL);
-	while (is_in_set(s1[s1_index], set) == 1)
-		s1_index--;
-	while (i <= s1_index)
-		trimmed[j++] = s1[i++];
-	trimmed[j] = '\0';
+	int		len;
+	int		size;
+	len = ft_strlen(s1);
+	i = get_start(s1, set,len);
+	j = get_end(s1, set, len);
+	size = j - i + 1;
+	trimmed = (char *) malloc(size);
+	ft_strlcpy(trimmed, &s1[i],size);
 	return (trimmed);
 }
-/*
-int	ft_strlen(char *str)
-{
-	int i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+
 #include <stdio.h>
 int	main()
 {
-	char s1[] = "lorem \n ipsum \t dolor \n sit \t amet";
+	char *s1 = "\t   \n\n\n  \n\n\t    Ges e d!\t\t\t\n  \t\t\t\t  ";
 
-	printf("%s",ft_strtrim(s1," "));
+	printf("%s",ft_strtrim(s1,"\t \n"));
 }
-*/
