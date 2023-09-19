@@ -12,7 +12,6 @@
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int get_start(char *s1, char *set, size_t len)
 {
@@ -33,14 +32,13 @@ static int get_end(char *s1, char *set, size_t len)
 	size_t	i;
 
 	i = 0;
-	len = len - 1;
-	while (len >= 0)
+	while (i <= len)
 	{
-		if (ft_strchr(set, s1[len]) == 0)
+		if (ft_strchr(set, s1[len - i - 1]) == 0)
 			break;
-		len--;
+		i++;
 	}
-	return (len);
+	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -50,15 +48,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed;
 	int		len;
 	int		size;
+
+	if (s1 == NULL)
+		return (NULL);
+	if (set == NULL)
+		return ((char *)s1);
 	len = ft_strlen(s1);
-	i = get_start(s1, set,len);
-	j = get_end(s1, set, len);
+	i = get_start((char *)s1, (char *)set, len);
+	j = get_end((char *)s1,(char *)set, len);
+	if (i >= j)
+		return (ft_strdup(""));
 	size = j - i + 1;
 	trimmed = (char *) malloc(size);
+	if(trimmed == NULL)
+		return (NULL);
 	ft_strlcpy(trimmed, &s1[i],size);
 	return (trimmed);
 }
-
+/*
 #include <stdio.h>
 int	main()
 {
@@ -66,3 +73,4 @@ int	main()
 
 	printf("%s",ft_strtrim(s1,"\t \n"));
 }
+*/
