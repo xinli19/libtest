@@ -18,9 +18,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned const char	*str;
 	unsigned char		c_char;
 
+	if (!s || n == 0)
+		return (NULL);
 	i = 0;
 	str = (unsigned const char *)s;
-	c_char = (unsigned char) c;
+	c_char = (unsigned char)c;
 	while (i < n)
 	{
 		if (str[i] == c_char)
@@ -31,6 +33,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 /*
+//The  memchr() function scans the initial n bytes of the memory area pointed to by s for the first instance of c.  
+//Both c and the bytes of the memory area pointed to
+//by s are interpreted as unsigned char.
 #include <stdio.h>
 #include <string.h>
 

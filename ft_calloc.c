@@ -13,18 +13,23 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	i;
 	void	*ptr;
 
+	if (nmemb == 0 || size == 0)
+		return (NULL);
 	i = 0;
-	ptr = (void *)malloc(size * count);
-	while (i < (size * count))
+	ptr = (void *)malloc(size * nmemb);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < (size * nmemb))
 		((unsigned char *)ptr)[i++] = 0;
 	return (ptr);
 }
 /*
+//malloc is not initialized but calloc is set the memory to zero
 #include <string.h>
 #include <stdio.h>
 int	main(void)
