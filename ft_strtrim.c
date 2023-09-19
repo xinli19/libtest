@@ -6,14 +6,14 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:14:22 by xili              #+#    #+#             */
-/*   Updated: 2023/09/18 17:15:26 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:05:20 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int get_start(char *s1, char *set, size_t len)
+static int	get_start(char *s1, char *set, size_t len)
 {
 	size_t	i;
 
@@ -21,13 +21,13 @@ static int get_start(char *s1, char *set, size_t len)
 	while (i < len)
 	{
 		if (ft_strchr(set, s1[i]) == 0)
-			break;
+			break ;
 		i++;
 	}
 	return (i);
 }
 
-static int get_end(char *s1, char *set, size_t len)
+static int	get_end(char *s1, char *set, size_t len)
 {
 	size_t	i;
 
@@ -35,7 +35,7 @@ static int get_end(char *s1, char *set, size_t len)
 	while (i <= len)
 	{
 		if (ft_strchr(set, s1[len - i - 1]) == 0)
-			break;
+			break ;
 		i++;
 	}
 	return (len - i);
@@ -55,14 +55,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return ((char *)s1);
 	len = ft_strlen(s1);
 	i = get_start((char *)s1, (char *)set, len);
-	j = get_end((char *)s1,(char *)set, len);
+	j = get_end((char *)s1, (char *)set, len);
 	if (i >= j)
 		return (ft_strdup(""));
 	size = j - i + 1;
 	trimmed = (char *) malloc(size);
-	if(trimmed == NULL)
+	if (trimmed == NULL)
 		return (NULL);
-	ft_strlcpy(trimmed, &s1[i],size);
+	ft_strlcpy(trimmed, &s1[i], size);
 	return (trimmed);
 }
 /*

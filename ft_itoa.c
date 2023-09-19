@@ -6,7 +6,7 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:03:22 by xili              #+#    #+#             */
-/*   Updated: 2023/09/18 17:13:31 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:00:09 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*ft_itoa(int n)
 		negative = -1;
 	}
 	length = find_length(num);
-	if(negative == 1)
+	if (negative == 1)
 		digits = (char *)malloc(length + 1);
 	else
 		digits = (char *)malloc(length + 2);

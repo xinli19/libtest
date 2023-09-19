@@ -6,13 +6,13 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:18:38 by xili              #+#    #+#             */
-/*   Updated: 2023/09/18 17:20:17 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:12:15 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
-#include <stdio.h>
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
@@ -38,6 +38,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 int	main(void)
 {
 	printf("%d\n",ft_strncmp("test", "tEst", 4));
-	printf("%d",'\2'-'\0');
-}
-*/
+	printf("%d",'\2'-'\0');*/

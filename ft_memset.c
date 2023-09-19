@@ -6,7 +6,7 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:21:13 by xili              #+#    #+#             */
-/*   Updated: 2023/09/14 14:47:56 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:07:49 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	*ft_memset(void *s, int c, size_t n)
 /*
 Ein einzelnes Byte besteht normalerweise aus 8 Bits (Binärstellen). 
 Jedes Bit kann entweder den Wert 0 oder 1 repräsentieren. 
-Daher hat ein einzelnes Byte 2^8 (256) verschiedene mögliche Kombinationen von Nullen und Einsen.
+Daher hat ein einzelnes Byte 2^8 (256) 
+verschiedene mögliche Kombinationen von Nullen und Einsen.
 #include <stdio.h>
 #include <string.h>
 //description: 

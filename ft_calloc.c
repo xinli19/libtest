@@ -6,7 +6,7 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:15:56 by xili              #+#    #+#             */
-/*   Updated: 2023/09/14 15:16:56 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:06:01 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 /*
 //malloc is not initialized but calloc is set the memory to zero
-If nmemb or size is 0, then calloc() returns either NULL, or a unique pointer value that can later be successfully passed to free().
+If nmemb or size is 0, then calloc() returns either NULL,
+ or a unique pointer value that can later be successfully passed to free().
 #include <string.h>
 #include <stdio.h>
 int	main(void)
@@ -38,10 +39,9 @@ int	main(void)
 	int		length = 0;
 	int	bug = 0;
 	int	j = 0;
-	char	test1[5][10] = {"hello","1239asdf","     sf","dfdfsasdf","112++"};
-	for (int i = 0;i < 5; i++) 
 	{
-		length = strlen(test1[i]) + 1;
+		.wq
+length = strlen(test1[i]) + 1;
 		str_calloc = (char*)ft_calloc(length, sizeof(*str_calloc));
 		for (j = 0; j < length; j++)
 		{

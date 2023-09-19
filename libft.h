@@ -6,7 +6,7 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:30:25 by xili              #+#    #+#             */
-/*   Updated: 2023/09/18 17:32:33 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:24:52 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_itoa(int n);
 void	*ft_memchr(const void *s, int c, size_t n);
-size_t		ft_strlen(const char *str);
+size_t	ft_strlen(const char *str);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -62,11 +62,11 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 int		ft_lstsize(t_list *lst);
-t_list *ft_lstnew(void *content);
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list *ft_lstlast(t_list *lst);
-void 	ft_lstiter(t_list *lst, void (*f)(void *));
-char 	*ft_strdup(const char *s);
+t_list	*ft_lstnew(void *content);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 #endif

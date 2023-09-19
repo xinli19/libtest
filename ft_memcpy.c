@@ -6,7 +6,7 @@
 /*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:35:18 by xili              #+#    #+#             */
-/*   Updated: 2023/09/14 15:27:24 by xili             ###   ########.fr       */
+/*   Updated: 2023/09/19 19:11:48 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t			i;
 	unsigned char	*d;
 	unsigned char	*s;
-    
-    if (dest == NULL && src == NULL)
-    {
-        return (NULL);
-    }
+
+	if (dest == NULL && src == NULL)
+	{
+		return (NULL);
+	}
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	i = 0;
@@ -30,11 +30,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	else
 	{
 		while (i < n)
-        {
+		{
 			d[i] = s[i];
-            i++;
-        }
-        return (dest);
+			i++;
+		}
+		return (dest);
 	}
 }
 /*
