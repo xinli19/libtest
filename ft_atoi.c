@@ -15,7 +15,7 @@
 void	skip(char *s, long *i, int *is_negative)
 {
 	while (s[*i] == '\t' || s[*i] == '\n' || s[*i] == '\v' || s[*i] == '\f'
-		|| s[*i] == '\r' || s[*i] == ' ' || s[*i] == '0')
+		|| s[*i] == '\r' || s[*i] == ' ' )
 		(*i)++;
 	if (s[*i] == '-' || s[*i] == '+')
 	{
@@ -69,5 +69,6 @@ int	main(void)
         printf("my atoi:%d\n",ft_atoi("  2147483647"));
  	printf("the original atoi:%d\n",atoi("     "));
         printf("my atoi:%d\n",ft_atoi("    "));
+	printf("%d\n",ft_atoi("0  95"));
 }
 */

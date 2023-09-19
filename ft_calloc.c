@@ -30,6 +30,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 }
 /*
 //malloc is not initialized but calloc is set the memory to zero
+If nmemb or size is 0, then calloc() returns either NULL, or a unique pointer value that can later be successfully passed to free().
 #include <string.h>
 #include <stdio.h>
 int	main(void)

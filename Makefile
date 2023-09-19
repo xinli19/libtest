@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-FILES = ft_memset \
+CODES = ft_memset \
 		ft_bzero \
 		ft_memcpy \
 		ft_memmove \
@@ -41,14 +41,11 @@ FILES = ft_memset \
 		ft_putnbr_fd \
 		ft_striteri \
 
-
 SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(CODES)))
 
 OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(CODES)))
 
 
 .c.o: $(SRCS)
@@ -57,13 +54,10 @@ OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
-
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	$(RM) $(OBJS) 
 
 fclean: clean
 	$(RM) $(NAME)

@@ -21,6 +21,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	s_len = ft_strlen((char *)s);
+	if (s_len < len)
+		len = s_len;
+	if (s_len < start)
+		len = 0;
 	substr = (char *)malloc(len + 1);
 	if (substr == NULL)
 		return (NULL);
