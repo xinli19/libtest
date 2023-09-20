@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 17:14:22 by xili              #+#    #+#             */
-/*   Updated: 2023/09/19 19:05:20 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 11:49:53 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 11:56:06 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	get_start(char *s1, char *set, size_t len)
 {

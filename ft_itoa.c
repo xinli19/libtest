@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 13:03:22 by xili              #+#    #+#             */
-/*   Updated: 2023/09/19 19:00:09 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 12:04:58 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 12:05:31 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-int	find_length(long n)
+static int	find_length(long n)
 {
 	int	i;
 
@@ -31,7 +30,7 @@ int	find_length(long n)
 	return (i);
 }
 
-void	set_arr(char *digits, long num, int negative, int length)
+static void	set_arr(char *digits, long num, int negative, int length)
 {
 	if (negative == -1)
 	{

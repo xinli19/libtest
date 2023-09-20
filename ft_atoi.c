@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 12:33:53 by xili              #+#    #+#             */
-/*   Updated: 2023/09/14 14:58:22 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 11:21:23 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 12:06:13 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	skip(char *s, long *i, int *is_negative)
+static void	skip(char *s, long *i, int *is_negative)
 {
 	while (s[*i] == '\t' || s[*i] == '\n' || s[*i] == '\v' || s[*i] == '\f'
 		|| s[*i] == '\r' || s[*i] == ' ' )

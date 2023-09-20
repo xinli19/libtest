@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 13:15:35 by xili              #+#    #+#             */
-/*   Updated: 2023/09/14 15:39:26 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 12:09:23 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 12:09:35 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 static void	int_to_char(long num, char *digits, int negative, int fd)
 {

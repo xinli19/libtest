@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 12:18:13 by xili              #+#    #+#             */
-/*   Updated: 2023/09/19 19:22:30 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 11:56:18 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 12:04:41 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdlib.h>
 
 static int	count_outer(char const *s, char c)
 {
@@ -63,11 +63,11 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	ind = -1;
-	while (i <= (size_t)ft_strlen((char *)s))
+	while (i <= ft_strlen((char *)s))
 	{
 		if (s[i] != c && ind < 0)
 			ind = i;
-		else if ((s[i] == c || i == (size_t)ft_strlen((char *)s)) && ind >= 0)
+		else if ((s[i] == c || i == ft_strlen((char *)s)) && ind >= 0)
 		{
 			array[j++] = set_arr((char *)s, ind, i);
 			ind = -1;
