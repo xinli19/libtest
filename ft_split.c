@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xili <xili@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: xili <xili@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:56:18 by xili              #+#    #+#             */
-/*   Updated: 2023/09/20 12:04:41 by xili             ###   ########.fr       */
+/*   Created: 2023/09/20 20:27:55 by xili              #+#    #+#             */
+/*   Updated: 2023/09/20 20:28:36 by xili             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_outer(char const *s, char c)
+static int	count_outer(char *s, char c)
 {
 	int	count;
 	int	i;
@@ -37,29 +37,40 @@ static int	count_outer(char const *s, char c)
 	return (count);
 }
 
+static void	*free_stuff(char **s, int index)
+{
+	int	i;
+
+	i = index;
+	while (i >= 0)
+		free(s[i--]);
+	free(s);
+	return (NULL);
+}
+
 static char	*set_arr(char *s, int start, int end)
 {
 	int		i;
 	char	*arr;
+	int		size;
 
 	i = 0;
-	arr = (char *)malloc((end - start + 1) * sizeof(char));
+	size = end - start + 1;
+	arr = (char *)malloc(size * sizeof(char));
+	if (!arr)
+		return (NULL);
 	while (start < end)
 		arr[i++] = s[start++];
 	arr[i] = '\0';
 	return (arr);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**split_arr(char const *s, char c, char **array)
 {
 	size_t	i;
 	size_t	j;
 	int		ind;
-	char	**array;
 
-	array = malloc((count_outer((char *)s, c) + 1) * sizeof(char *));
-	if (array == NULL || !s)
-		return (0);
 	i = 0;
 	j = 0;
 	ind = -1;
@@ -70,6 +81,8 @@ char	**ft_split(char const *s, char c)
 		else if ((s[i] == c || i == ft_strlen((char *)s)) && ind >= 0)
 		{
 			array[j++] = set_arr((char *)s, ind, i);
+			if (!array[j - 1])
+				return (free_stuff(array, j - 1));
 			ind = -1;
 		}
 		i++;
@@ -77,24 +90,13 @@ char	**ft_split(char const *s, char c)
 	array[j] = 0;
 	return (array);
 }
-/*
-int main(void)
+
+char	**ft_split(char const *s, char c)
 {
-    int i = 0;
-    char **arr;
+	char	**array;
 
-    arr = ft_split("abbababbbb", 'a');
-    if (arr == NULL)
-        printf("the result is null");
-    else
-    {
-        while (arr[i]) // Loop until the element is not NULL
-        {
-            printf("%s\n", arr[i]);
-            i++;
-        }
-    }
-
-    return 0;
+	array = malloc((count_outer((char *)s, c) + 1) * sizeof(char *));
+	if (array == NULL || !s)
+		return (0);
+	return (split_arr(s, c, array));
 }
-*/
