@@ -97,6 +97,9 @@ char	**ft_split(char const *s, char c)
 
 	array = malloc((count_outer((char *)s, c) + 1) * sizeof(char *));
 	if (array == NULL || !s)
-		return (0);
+	{
+		free(array);
+		return (NULL);
+	}
 	return (split_arr(s, c, array));
 }
